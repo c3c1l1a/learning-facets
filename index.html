@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang='en'>
+	<head>
+		<title>Learning facets</title>
+		<meta charset='utf-8'>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+		<script src="bootstrap/js/bootstrap.min.js"></script>
+		<script src="bootstrap/js/jquery.js"></script>
+	</head>
+	<body>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<h1>Learning facets</h1>
+				</div>
+				<div class="col-md-8">
+					<form>
+						<div class="input-group">
+							<span class="input-group-addon">Facet Title</span>
+							<input id="facet-title" type="text" class="form-control" placeholder="Facet Title"/>
+						</div>
+						<div class="input-group">
+							<span class="input-group-addon">Facet Body</span>
+							<textarea id="facet-body" rows="5" class="form-control"></textarea>
+						</div>
+						<div class="input-group">
+							<span class="input-group-addon">References</span>
+							<input class="form-control" id="references" placeholder="references"/>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+		$def with (greeting)
+
+		$if greeting:
+    	I just wanted to say <em style="color: green; font-size: 2em;">$greeting</em>.
+		$else:
+    <em>Hello</em>, world!
+	</body>
+</html>
