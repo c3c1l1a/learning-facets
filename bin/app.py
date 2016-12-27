@@ -1,6 +1,8 @@
 import web
 
-urls = ('/', 'index')
+urls = (
+	r'/', 'index'
+)
 
 app = web.application(urls, globals())
 render = web.template.render('templates')
@@ -8,7 +10,7 @@ render = web.template.render('templates')
 class index:
 	def GET(self):
 		text = "This is the new string now"
-		return render.index(text=text)
+		return render.index()
 
 if __name__ == "__main__":
 	app.run()
