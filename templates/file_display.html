@@ -1,15 +1,27 @@
 $def with (text)
+<div class="slideshow-container">
+  <div class="mySlides">
+    <pre><code class="language-python">$text</code></pre>
+    <pre>this is where the explanations will go</pre>
+  </div>
 
-<div class="container">
-	<!--projects button-->
-	<div class="row" id="projects">
-		<div class="col-md-12">
-			<pre>
-			<code class="language-python">
-				$text
-			</code>
-			</pre>
-		</div>
-	</div>
+  <div class="mySlides">
+    <pre><code class="language-python">$text</code></pre>
+    <pre>this is where the explanations will go</pre>
+  </div>
+
+  <div class="mySlides">
+    <pre><code class="language-python">$text</code></pre>
+    <pre>this is where the explanations will go</pre>
+  </div>
+
+  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1)">&#10095;</a>
 </div>
+<br>
 
+<div style="text-align:center">
+  <span class="dot" onclick="currentSlide(1)"></span> 
+  <span class="dot" onclick="currentSlide(2)"></span> 
+  <span class="dot" onclick="currentSlide(3)"></span> 
+</div>

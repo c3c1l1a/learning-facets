@@ -17,7 +17,7 @@ class index:
 
 class display_files:
 	def GET(self):
-		fp=open('whatscooking/testfiles/jsfile.txt','r')
+		fp=open('whatscooking/testfiles/pythonfile.py','rU')
 		text=fp.read()
 		fp.close()
 		return render.file_display(text) 
