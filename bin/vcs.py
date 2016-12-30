@@ -23,4 +23,6 @@ def commit():
 	copy('file.txt', '.vcs/objects/{}'.format(newFileName))
 	writefile('.vcs/master', newFileName)
 
-
+def checkout():
+	latest_revision = readfile('.vcs/master')
+	copy('.vcs/objects/{}'.format(latest_revision), 'file.txt')
