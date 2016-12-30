@@ -1,5 +1,8 @@
 import web
 import os
+from vcs import *
+
+
 urls = (
 	r'/', 'index',
 	r'/display_files', 'display_files' 
@@ -17,9 +20,10 @@ class index:
 
 class display_files:
 	def GET(self):
-		fp=open('whatscooking/testfiles/pythonfile.py','rU')
+		fp=open('.vcs/pythonfile.py','rU')
 		text=fp.read()
 		fp.close()
 		return render.file_display(text) 
 if __name__ == "__main__":
-	app.run()
+	#app.run()
+	commit()

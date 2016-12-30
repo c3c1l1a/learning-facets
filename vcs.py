@@ -28,8 +28,10 @@ def md5_file_encrypt(file):
 
 def commit():
 	# initial commit
-	new_file_name = increament_revision("file.txt")
-	copy('file.txt', '.vcs/objects/{}'.format(new_file_name))
+	print "committing.."
+	new_file_name = increament_revision("whatscooking/testfiles/pythonfile.py")
+	print new_file_name
+	copy('whatscooking/testfiles/pythonfile.py', '.vcs/objects/{}'.format(new_file_name))
 	writefile('.vcs/master', new_file_name)	
 
 def checkout():
