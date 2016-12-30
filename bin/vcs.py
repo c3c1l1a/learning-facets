@@ -19,10 +19,17 @@ def increament_revision(file_name):
 	return new_file
 
 def commit():
-	newFileName = increament_revision(readfile('.vcs/master'))
-	copy('file.txt', '.vcs/objects/{}'.format(newFileName))
-	writefile('.vcs/master', newFileName)
+	# initial commit
+	master = readfile('.vcs/master')
+	if len(master) == 0:
+		writefile('.vcs/master',increament_revision("file.1"))
+
+	#newFileName = increament_revision(readfile('.vcs/master'))
+	#copy('file.txt', '.vcs/objects/{}'.format(newFileName))
+	#writefile('.vcs/master', newFileName)
 
 def checkout():
 	latest_revision = readfile('.vcs/master')
 	copy('.vcs/objects/{}'.format(latest_revision), 'file.txt')
+
+commit()
