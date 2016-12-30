@@ -1,3 +1,5 @@
+import hashlib
+
 def readfile(file):
 	f = open(file, 'rU')
 	content = f.read()
@@ -14,22 +16,23 @@ def copy(src_file, dest_file):
 	writefile(dest_file, src_file_content)
 	
 def increament_revision(file_name):
-	split_name = file_name.split('.')
-	new_file = split_name[0]+ "." + str(int(split_name[1]) + 1)
+	new_file = md5_file_encrypt(file_name)
 	return new_file
+
+def md5_file_encrypt(file):
+	hasher = hashlib.md5()
+	file_content = readfile(file)
+	hasher.update(file_content)
+	hashed_content = hasher.hexdigest()
+	return hashed_content 
 
 def commit():
 	# initial commit
-	master = readfile('.vcs/master')
-	if len(master) == 0:
-		writefile('.vcs/master',increament_revision("file.1"))
-
-	#newFileName = increament_revision(readfile('.vcs/master'))
-	#copy('file.txt', '.vcs/objects/{}'.format(newFileName))
-	#writefile('.vcs/master', newFileName)
+	new_file_name = increament_revision("file.txt")
+	copy('file.txt', '.vcs/objects/{}'.format(new_file_name))
+	writefile('.vcs/master', new_file_name)	
 
 def checkout():
 	latest_revision = readfile('.vcs/master')
 	copy('.vcs/objects/{}'.format(latest_revision), 'file.txt')
 
-commit()
