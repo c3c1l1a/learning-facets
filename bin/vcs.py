@@ -12,4 +12,15 @@ def writefile(file, content):
 def copy(src_file, dest_file):
 	src_file_content = readfile(src_file)
 	writefile(dest_file, src_file_content)
+	
+def increament_revision(file_name):
+	split_name = file_name.split('.')
+	new_file = split_name[0]+ "." + str(int(split_name[1]) + 1)
+	return new_file
+
+def commit():
+	newFileName = increament_revision(readfile('.vcs/master'))
+	copy('file.txt', '.vcs/objects/{}'.format(newFileName))
+	writefile('.vcs/master', newFileName)
+
 
