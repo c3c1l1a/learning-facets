@@ -1,4 +1,5 @@
 import hashlib
+import os
 
 def readfile(file):
 	f = open(file, 'rU')
@@ -37,4 +38,6 @@ def commit():
 def checkout():
 	latest_revision = readfile('.vcs/master')
 	copy('.vcs/objects/{}'.format(latest_revision), 'file.txt')
+
+
 

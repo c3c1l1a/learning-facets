@@ -11,4 +11,12 @@ Proposed Features
 - The user should be able create record and create a thought. The system should then remind the user in time interval about the thought. To ask if you resolved the thought or why the thought was important. 
 - The user should be able to enter future plans and goals. The system should be able to ask what the progress is and what you and what you plan to do next.
 - You can highlight an important term or learning facet that you can then set a reminder scheduler so that you don't forget the facet
-- 
+*****************************************************************
+What I want to do is take the directories and map them to the side bar
+- Iterate the directory tree
+- With the files iterate the file system
+RECEPIES 
+- How to iterate through a directory tree
+- Define classes on the fly
+
+

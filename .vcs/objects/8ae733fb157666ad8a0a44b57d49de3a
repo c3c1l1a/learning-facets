@@ -1,0 +1,4 @@
+import os
+
+def rm(file_name):
+	os.remove(file_name)
